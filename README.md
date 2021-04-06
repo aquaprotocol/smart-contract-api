@@ -34,6 +34,7 @@ Request:
 type InvokeDepositionBody struct {
 	InvokeDeposition InvokeDeposition `json:"invokeDeposition"`
 }
+
 type InvokeDeposition struct {
 	DepositionType string `json:"depType"`
 	AccountNumberFrom string `json:"accountNumberFrom"`
@@ -178,9 +179,50 @@ type InvestPaperResponse struct {
 	TransactionDate string `json:"transaction_date"`
 }
 ```
+#### World state
+For performance aspect world state is recorded parallel in blockchain and datebase.
+
+```sql
+
+CREATE TABLE art_state (
+operator VARCHAR(70), 
+amount FLOAT(20,2), 
+name VARCHAR(70),
+transaction_date VARCHAR(100)
+);
+
+#drop table art_state;
+select * from art_state;
 
 
+CREATE TABLE insurance_state (
+operator VARCHAR(70), 
+amount FLOAT(20,2), 
+name VARCHAR(70),
+type_of VARCHAR(10),
+transaction_date VARCHAR(100)
+);
+select * from insurance_state;
 
+
+CREATE TABLE paper_state (
+operator VARCHAR(70), 
+issuer_id VARCHAR(90),
+amount FLOAT(20,2), 
+series VARCHAR(70),
+number_from VARCHAR(10),
+number_to VARCHAR(10),
+transaction_date VARCHAR(100)
+);
+
+select * from paper_state;
+```
+#### [ProvideArtWorldStateModification](https://github.com/aquaprotocol/smart-contract-api/blob/856a7c0811284e99ada2c39cdfe748aca505492b/server/invest/art/provide_art_worldstate.go#L9)
+Function for change state in Art.
+
+#### [ProvideInsuranceWorldStateModification](https://github.com/aquaprotocol/smart-contract-api/blob/856a7c0811284e99ada2c39cdfe748aca505492b/server/invest/insurance/provide_insurance_worldstate.go#L9)
+
+#### [ProvidePaperWorldStateModification](https://github.com/aquaprotocol/smart-contract-api/blob/856a7c0811284e99ada2c39cdfe748aca505492b/server/invest/paper/provide_paper_worldstate.go#L9)
 
 
 
