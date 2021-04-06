@@ -13,14 +13,14 @@ import (
 
 func WalletFactory(client *ethclient.Client) *bind.TransactOpts {
 
-	file := ""
-	ks := keystore.NewKeyStore("", keystore.StandardScryptN, keystore.StandardScryptP)
+	file := "./tmp/WALLET_FILE"
+	ks := keystore.NewKeyStore("./tmp", keystore.StandardScryptN, keystore.StandardScryptP)
 	jsonBytes, err := ioutil.ReadFile(file)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	password := ""
+	password := "PASSWORD"
 	account, err := ks.Import(jsonBytes, password, password)
 
 	nonce, err := client.PendingNonceAt(context.Background(), account.Address)
@@ -33,7 +33,7 @@ func WalletFactory(client *ethclient.Client) *bind.TransactOpts {
 		log.Fatal(err)
 	}
 
-	ks.Unlock(account,"")
+	ks.Unlock(account,"PASSWORD")
 
 	fmt.Println(account.Address.Hex())
 

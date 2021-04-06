@@ -1,11 +1,10 @@
 package main
 
 import (
+	sw "./server"
 	"github.com/rs/cors"
 	"log"
 	"net/http"
-
-	sw "./server"
 )
 
 func main() {
@@ -19,6 +18,8 @@ func main() {
 	})
 
 	handler := c.Handler(router)
+
+
 
 	log.Fatal(http.ListenAndServe(":7000", handler))
 }

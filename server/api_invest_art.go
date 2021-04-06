@@ -28,3 +28,13 @@ func InvestArt(w http.ResponseWriter, r *http.Request) {
 	w.Write(jIA)
 }
 
+func GetArtWorldState(w http.ResponseWriter, r *http.Request) {
+
+	pIA := invest.GetArtWorldState()
+
+	jIA, _:= json.Marshal(pIA)
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.WriteHeader(http.StatusOK)
+	w.Write(jIA)
+}
+

@@ -49,10 +49,10 @@ var routes = Routes{
 		InvokeDeposition,
 	},
 	Route{
-		"GetBalanceOf",
+		"InvokeWithdraw",
 		strings.ToUpper("Post"),
-		"/treasury/balanceOf",
-		GetBalanceOf,
+		"/withdraw/invoke",
+		InvokeWithdraw,
 	},
 
 	Route{
@@ -63,6 +63,13 @@ var routes = Routes{
 	},
 
 	Route{
+		"GetArtWorldState",
+		strings.ToUpper("Post"),
+		"/invest/getArtState",
+		GetArtWorldState,
+	},
+
+	Route{
 		"InvestInsurance",
 		strings.ToUpper("Post"),
 		"/invest/insurance",
@@ -70,9 +77,23 @@ var routes = Routes{
 	},
 
 	Route{
+		"GetInsuranceWorldState",
+		strings.ToUpper("Post"),
+		"/invest/getInsuranceState",
+		GetInsuranceWorldState,
+	},
+
+	Route{
 		"InvestPaper",
 		strings.ToUpper("Post"),
 		"/invest/paper",
 		InvestPaper,
+	},
+
+	Route{
+		"GetPaperWorldState",
+		strings.ToUpper("Post"),
+		"/invest/getPaperState",
+		GetPaperWorldState,
 	},
 }

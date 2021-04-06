@@ -16,7 +16,7 @@ import (
 )
 
 // AquaABI is the input ABI used to generate the binding from.
-const AquaABI = "[{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"ethAddress\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"onBehalfOf\",\"type\":\"address\"}],\"name\":\"withdraw\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_result\",\"type\":\"string\"},{\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"callbackWithdrawFiat\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_result\",\"type\":\"string\"},{\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"callbackDepositFiat\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"tokenAddress\",\"type\":\"address\"},{\"name\":\"operator\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"_typeOf\",\"type\":\"string\"},{\"name\":\"_date\",\"type\":\"string\"}],\"name\":\"buyInsurance\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"tokenAddress\",\"type\":\"address\"},{\"name\":\"operator\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"name\",\"type\":\"string\"}],\"name\":\"buyArt\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"ethAddress\",\"type\":\"address\"},{\"name\":\"bankAccountAddress\",\"type\":\"string\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"onBehalfOf\",\"type\":\"address\"}],\"name\":\"withdrawFiat\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"bankAccountAddress\",\"type\":\"string\"},{\"name\":\"ethAddress\",\"type\":\"address\"}],\"name\":\"depositFiat\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"tokenAddress\",\"type\":\"address\"},{\"name\":\"operator\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"issuerId\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"string\"},{\"name\":\"numberFrom\",\"type\":\"uint256\"},{\"name\":\"numberTo\",\"type\":\"uint256\"}],\"name\":\"buyPaper\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_oracleInstanceAddress\",\"type\":\"address\"}],\"name\":\"setOracleInstanceAddress\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"onBehalfOf\",\"type\":\"address\"}],\"name\":\"deposit\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"reserve\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"onBehalfOf\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Deposit\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"reserve\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"onBehalfOf\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Withdraw\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"_result\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"CallbackDepositFiatEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"bankAccountAddress\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"DepositFiatEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"oracleAddress\",\"type\":\"address\"}],\"name\":\"NewOracleAddressEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"issuerId\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"series\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"numberFrom\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"numberTo\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"BuyPaperEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"BuyArtEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"}]"
+const AquaABI = "[{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"tokenAddress\",\"type\":\"address\"},{\"name\":\"operator\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"name\",\"type\":\"string\"}],\"name\":\"buyArt\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"tokenAddress\",\"type\":\"address\"},{\"name\":\"operator\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"_typeOf\",\"type\":\"string\"},{\"name\":\"_date\",\"type\":\"string\"}],\"name\":\"buyInsurance\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"tokenAddress\",\"type\":\"address\"},{\"name\":\"operator\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"issuerId\",\"type\":\"string\"},{\"name\":\"series\",\"type\":\"string\"},{\"name\":\"numberFrom\",\"type\":\"uint256\"},{\"name\":\"numberTo\",\"type\":\"uint256\"}],\"name\":\"buyPaper\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_result\",\"type\":\"string\"},{\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"callbackDepositFiat\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_result\",\"type\":\"string\"},{\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"callbackWithdrawFiat\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_requestId\",\"type\":\"bytes32\"},{\"name\":\"_payment\",\"type\":\"uint256\"},{\"name\":\"_callbackFunctionId\",\"type\":\"bytes4\"},{\"name\":\"_expiration\",\"type\":\"uint256\"}],\"name\":\"cancelRequest\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"onBehalfOf\",\"type\":\"address\"}],\"name\":\"deposit\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"reserve\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"onBehalfOf\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Deposit\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"bankAccountAddress\",\"type\":\"string\"},{\"name\":\"ethAddress\",\"type\":\"address\"}],\"name\":\"depositFiat\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_requestId\",\"type\":\"bytes32\"},{\"name\":\"_price\",\"type\":\"uint256\"}],\"name\":\"fulfill\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"oracleAddress\",\"type\":\"address\"}],\"name\":\"NewOracleAddressEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"issuerId\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"series\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"numberFrom\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"numberTo\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"BuyPaperEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"BuyArtEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"id\",\"type\":\"bytes32\"}],\"name\":\"ChainlinkRequested\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"id\",\"type\":\"bytes32\"}],\"name\":\"ChainlinkFulfilled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"id\",\"type\":\"bytes32\"}],\"name\":\"ChainlinkCancelled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"requestEuroPrice\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_oracleInstanceAddress\",\"type\":\"address\"}],\"name\":\"setOracleInstanceAddress\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"ethAddress\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"onBehalfOf\",\"type\":\"address\"}],\"name\":\"withdraw\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"reserve\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"onBehalfOf\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Withdraw\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"_result\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"CallbackDepositFiatEvent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"bankAccountAddress\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"DepositFiatEvent\",\"type\":\"event\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":false,\"inputs\":[{\"name\":\"asset\",\"type\":\"address\"},{\"name\":\"ethAddress\",\"type\":\"address\"},{\"name\":\"bankAccountAddress\",\"type\":\"string\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"onBehalfOf\",\"type\":\"address\"}],\"name\":\"withdrawFiat\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"withdrawLink\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"currentPrice\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}]"
 
 // Aqua is an auto generated Go binding around an Ethereum contract.
 type Aqua struct {
@@ -158,6 +158,32 @@ func (_Aqua *AquaTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transa
 // Transact invokes the (paid) contract method with params as input values.
 func (_Aqua *AquaTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
 	return _Aqua.Contract.contract.Transact(opts, method, params...)
+}
+
+// CurrentPrice is a free data retrieval call binding the contract method 0x9d1b464a.
+//
+// Solidity: function currentPrice() constant returns(uint256)
+func (_Aqua *AquaCaller) CurrentPrice(opts *bind.CallOpts) (*big.Int, error) {
+	var (
+		ret0 = new(*big.Int)
+	)
+	out := ret0
+	err := _Aqua.contract.Call(opts, out, "currentPrice")
+	return *ret0, err
+}
+
+// CurrentPrice is a free data retrieval call binding the contract method 0x9d1b464a.
+//
+// Solidity: function currentPrice() constant returns(uint256)
+func (_Aqua *AquaSession) CurrentPrice() (*big.Int, error) {
+	return _Aqua.Contract.CurrentPrice(&_Aqua.CallOpts)
+}
+
+// CurrentPrice is a free data retrieval call binding the contract method 0x9d1b464a.
+//
+// Solidity: function currentPrice() constant returns(uint256)
+func (_Aqua *AquaCallerSession) CurrentPrice() (*big.Int, error) {
+	return _Aqua.Contract.CurrentPrice(&_Aqua.CallOpts)
 }
 
 // IsOwner is a free data retrieval call binding the contract method 0x8f32d59b.
@@ -317,6 +343,27 @@ func (_Aqua *AquaTransactorSession) CallbackWithdrawFiat(_result string, _id *bi
 	return _Aqua.Contract.CallbackWithdrawFiat(&_Aqua.TransactOpts, _result, _id)
 }
 
+// CancelRequest is a paid mutator transaction binding the contract method 0xec65d0f8.
+//
+// Solidity: function cancelRequest(_requestId bytes32, _payment uint256, _callbackFunctionId bytes4, _expiration uint256) returns()
+func (_Aqua *AquaTransactor) CancelRequest(opts *bind.TransactOpts, _requestId [32]byte, _payment *big.Int, _callbackFunctionId [4]byte, _expiration *big.Int) (*types.Transaction, error) {
+	return _Aqua.contract.Transact(opts, "cancelRequest", _requestId, _payment, _callbackFunctionId, _expiration)
+}
+
+// CancelRequest is a paid mutator transaction binding the contract method 0xec65d0f8.
+//
+// Solidity: function cancelRequest(_requestId bytes32, _payment uint256, _callbackFunctionId bytes4, _expiration uint256) returns()
+func (_Aqua *AquaSession) CancelRequest(_requestId [32]byte, _payment *big.Int, _callbackFunctionId [4]byte, _expiration *big.Int) (*types.Transaction, error) {
+	return _Aqua.Contract.CancelRequest(&_Aqua.TransactOpts, _requestId, _payment, _callbackFunctionId, _expiration)
+}
+
+// CancelRequest is a paid mutator transaction binding the contract method 0xec65d0f8.
+//
+// Solidity: function cancelRequest(_requestId bytes32, _payment uint256, _callbackFunctionId bytes4, _expiration uint256) returns()
+func (_Aqua *AquaTransactorSession) CancelRequest(_requestId [32]byte, _payment *big.Int, _callbackFunctionId [4]byte, _expiration *big.Int) (*types.Transaction, error) {
+	return _Aqua.Contract.CancelRequest(&_Aqua.TransactOpts, _requestId, _payment, _callbackFunctionId, _expiration)
+}
+
 // Deposit is a paid mutator transaction binding the contract method 0xf45346dc.
 //
 // Solidity: function deposit(asset address, amount uint256, onBehalfOf address) returns()
@@ -359,6 +406,27 @@ func (_Aqua *AquaTransactorSession) DepositFiat(asset common.Address, amount *bi
 	return _Aqua.Contract.DepositFiat(&_Aqua.TransactOpts, asset, amount, bankAccountAddress, ethAddress)
 }
 
+// Fulfill is a paid mutator transaction binding the contract method 0x4357855e.
+//
+// Solidity: function fulfill(_requestId bytes32, _price uint256) returns()
+func (_Aqua *AquaTransactor) Fulfill(opts *bind.TransactOpts, _requestId [32]byte, _price *big.Int) (*types.Transaction, error) {
+	return _Aqua.contract.Transact(opts, "fulfill", _requestId, _price)
+}
+
+// Fulfill is a paid mutator transaction binding the contract method 0x4357855e.
+//
+// Solidity: function fulfill(_requestId bytes32, _price uint256) returns()
+func (_Aqua *AquaSession) Fulfill(_requestId [32]byte, _price *big.Int) (*types.Transaction, error) {
+	return _Aqua.Contract.Fulfill(&_Aqua.TransactOpts, _requestId, _price)
+}
+
+// Fulfill is a paid mutator transaction binding the contract method 0x4357855e.
+//
+// Solidity: function fulfill(_requestId bytes32, _price uint256) returns()
+func (_Aqua *AquaTransactorSession) Fulfill(_requestId [32]byte, _price *big.Int) (*types.Transaction, error) {
+	return _Aqua.Contract.Fulfill(&_Aqua.TransactOpts, _requestId, _price)
+}
+
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
@@ -378,6 +446,27 @@ func (_Aqua *AquaSession) RenounceOwnership() (*types.Transaction, error) {
 // Solidity: function renounceOwnership() returns()
 func (_Aqua *AquaTransactorSession) RenounceOwnership() (*types.Transaction, error) {
 	return _Aqua.Contract.RenounceOwnership(&_Aqua.TransactOpts)
+}
+
+// RequestEuroPrice is a paid mutator transaction binding the contract method 0xfb67df6e.
+//
+// Solidity: function requestEuroPrice() returns()
+func (_Aqua *AquaTransactor) RequestEuroPrice(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Aqua.contract.Transact(opts, "requestEuroPrice")
+}
+
+// RequestEuroPrice is a paid mutator transaction binding the contract method 0xfb67df6e.
+//
+// Solidity: function requestEuroPrice() returns()
+func (_Aqua *AquaSession) RequestEuroPrice() (*types.Transaction, error) {
+	return _Aqua.Contract.RequestEuroPrice(&_Aqua.TransactOpts)
+}
+
+// RequestEuroPrice is a paid mutator transaction binding the contract method 0xfb67df6e.
+//
+// Solidity: function requestEuroPrice() returns()
+func (_Aqua *AquaTransactorSession) RequestEuroPrice() (*types.Transaction, error) {
+	return _Aqua.Contract.RequestEuroPrice(&_Aqua.TransactOpts)
 }
 
 // SetOracleInstanceAddress is a paid mutator transaction binding the contract method 0xe9e17a9e.
@@ -462,6 +551,27 @@ func (_Aqua *AquaSession) WithdrawFiat(asset common.Address, ethAddress common.A
 // Solidity: function withdrawFiat(asset address, ethAddress address, bankAccountAddress string, amount uint256, onBehalfOf address) returns()
 func (_Aqua *AquaTransactorSession) WithdrawFiat(asset common.Address, ethAddress common.Address, bankAccountAddress string, amount *big.Int, onBehalfOf common.Address) (*types.Transaction, error) {
 	return _Aqua.Contract.WithdrawFiat(&_Aqua.TransactOpts, asset, ethAddress, bankAccountAddress, amount, onBehalfOf)
+}
+
+// WithdrawLink is a paid mutator transaction binding the contract method 0x8dc654a2.
+//
+// Solidity: function withdrawLink() returns()
+func (_Aqua *AquaTransactor) WithdrawLink(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Aqua.contract.Transact(opts, "withdrawLink")
+}
+
+// WithdrawLink is a paid mutator transaction binding the contract method 0x8dc654a2.
+//
+// Solidity: function withdrawLink() returns()
+func (_Aqua *AquaSession) WithdrawLink() (*types.Transaction, error) {
+	return _Aqua.Contract.WithdrawLink(&_Aqua.TransactOpts)
+}
+
+// WithdrawLink is a paid mutator transaction binding the contract method 0x8dc654a2.
+//
+// Solidity: function withdrawLink() returns()
+func (_Aqua *AquaTransactorSession) WithdrawLink() (*types.Transaction, error) {
+	return _Aqua.Contract.WithdrawLink(&_Aqua.TransactOpts)
 }
 
 // AquaBuyArtEventIterator is returned from FilterBuyArtEvent and is used to iterate over the raw logs and unpacked data for BuyArtEvent events raised by the Aqua contract.
@@ -818,6 +928,402 @@ func (_Aqua *AquaFilterer) WatchCallbackDepositFiatEvent(opts *bind.WatchOpts, s
 				// New log arrived, parse the event and forward to the user
 				event := new(AquaCallbackDepositFiatEvent)
 				if err := _Aqua.contract.UnpackLog(event, "CallbackDepositFiatEvent", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// AquaChainlinkCancelledIterator is returned from FilterChainlinkCancelled and is used to iterate over the raw logs and unpacked data for ChainlinkCancelled events raised by the Aqua contract.
+type AquaChainlinkCancelledIterator struct {
+	Event *AquaChainlinkCancelled // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *AquaChainlinkCancelledIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(AquaChainlinkCancelled)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(AquaChainlinkCancelled)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *AquaChainlinkCancelledIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *AquaChainlinkCancelledIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// AquaChainlinkCancelled represents a ChainlinkCancelled event raised by the Aqua contract.
+type AquaChainlinkCancelled struct {
+	Id  [32]byte
+	Raw types.Log // Blockchain specific contextual infos
+}
+
+// FilterChainlinkCancelled is a free log retrieval operation binding the contract event 0xe1fe3afa0f7f761ff0a8b89086790efd5140d2907ebd5b7ff6bfcb5e075fd4c5.
+//
+// Solidity: e ChainlinkCancelled(id indexed bytes32)
+func (_Aqua *AquaFilterer) FilterChainlinkCancelled(opts *bind.FilterOpts, id [][32]byte) (*AquaChainlinkCancelledIterator, error) {
+
+	var idRule []interface{}
+	for _, idItem := range id {
+		idRule = append(idRule, idItem)
+	}
+
+	logs, sub, err := _Aqua.contract.FilterLogs(opts, "ChainlinkCancelled", idRule)
+	if err != nil {
+		return nil, err
+	}
+	return &AquaChainlinkCancelledIterator{contract: _Aqua.contract, event: "ChainlinkCancelled", logs: logs, sub: sub}, nil
+}
+
+// WatchChainlinkCancelled is a free log subscription operation binding the contract event 0xe1fe3afa0f7f761ff0a8b89086790efd5140d2907ebd5b7ff6bfcb5e075fd4c5.
+//
+// Solidity: e ChainlinkCancelled(id indexed bytes32)
+func (_Aqua *AquaFilterer) WatchChainlinkCancelled(opts *bind.WatchOpts, sink chan<- *AquaChainlinkCancelled, id [][32]byte) (event.Subscription, error) {
+
+	var idRule []interface{}
+	for _, idItem := range id {
+		idRule = append(idRule, idItem)
+	}
+
+	logs, sub, err := _Aqua.contract.WatchLogs(opts, "ChainlinkCancelled", idRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(AquaChainlinkCancelled)
+				if err := _Aqua.contract.UnpackLog(event, "ChainlinkCancelled", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// AquaChainlinkFulfilledIterator is returned from FilterChainlinkFulfilled and is used to iterate over the raw logs and unpacked data for ChainlinkFulfilled events raised by the Aqua contract.
+type AquaChainlinkFulfilledIterator struct {
+	Event *AquaChainlinkFulfilled // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *AquaChainlinkFulfilledIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(AquaChainlinkFulfilled)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(AquaChainlinkFulfilled)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *AquaChainlinkFulfilledIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *AquaChainlinkFulfilledIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// AquaChainlinkFulfilled represents a ChainlinkFulfilled event raised by the Aqua contract.
+type AquaChainlinkFulfilled struct {
+	Id  [32]byte
+	Raw types.Log // Blockchain specific contextual infos
+}
+
+// FilterChainlinkFulfilled is a free log retrieval operation binding the contract event 0x7cc135e0cebb02c3480ae5d74d377283180a2601f8f644edf7987b009316c63a.
+//
+// Solidity: e ChainlinkFulfilled(id indexed bytes32)
+func (_Aqua *AquaFilterer) FilterChainlinkFulfilled(opts *bind.FilterOpts, id [][32]byte) (*AquaChainlinkFulfilledIterator, error) {
+
+	var idRule []interface{}
+	for _, idItem := range id {
+		idRule = append(idRule, idItem)
+	}
+
+	logs, sub, err := _Aqua.contract.FilterLogs(opts, "ChainlinkFulfilled", idRule)
+	if err != nil {
+		return nil, err
+	}
+	return &AquaChainlinkFulfilledIterator{contract: _Aqua.contract, event: "ChainlinkFulfilled", logs: logs, sub: sub}, nil
+}
+
+// WatchChainlinkFulfilled is a free log subscription operation binding the contract event 0x7cc135e0cebb02c3480ae5d74d377283180a2601f8f644edf7987b009316c63a.
+//
+// Solidity: e ChainlinkFulfilled(id indexed bytes32)
+func (_Aqua *AquaFilterer) WatchChainlinkFulfilled(opts *bind.WatchOpts, sink chan<- *AquaChainlinkFulfilled, id [][32]byte) (event.Subscription, error) {
+
+	var idRule []interface{}
+	for _, idItem := range id {
+		idRule = append(idRule, idItem)
+	}
+
+	logs, sub, err := _Aqua.contract.WatchLogs(opts, "ChainlinkFulfilled", idRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(AquaChainlinkFulfilled)
+				if err := _Aqua.contract.UnpackLog(event, "ChainlinkFulfilled", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// AquaChainlinkRequestedIterator is returned from FilterChainlinkRequested and is used to iterate over the raw logs and unpacked data for ChainlinkRequested events raised by the Aqua contract.
+type AquaChainlinkRequestedIterator struct {
+	Event *AquaChainlinkRequested // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *AquaChainlinkRequestedIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(AquaChainlinkRequested)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(AquaChainlinkRequested)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *AquaChainlinkRequestedIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *AquaChainlinkRequestedIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// AquaChainlinkRequested represents a ChainlinkRequested event raised by the Aqua contract.
+type AquaChainlinkRequested struct {
+	Id  [32]byte
+	Raw types.Log // Blockchain specific contextual infos
+}
+
+// FilterChainlinkRequested is a free log retrieval operation binding the contract event 0xb5e6e01e79f91267dc17b4e6314d5d4d03593d2ceee0fbb452b750bd70ea5af9.
+//
+// Solidity: e ChainlinkRequested(id indexed bytes32)
+func (_Aqua *AquaFilterer) FilterChainlinkRequested(opts *bind.FilterOpts, id [][32]byte) (*AquaChainlinkRequestedIterator, error) {
+
+	var idRule []interface{}
+	for _, idItem := range id {
+		idRule = append(idRule, idItem)
+	}
+
+	logs, sub, err := _Aqua.contract.FilterLogs(opts, "ChainlinkRequested", idRule)
+	if err != nil {
+		return nil, err
+	}
+	return &AquaChainlinkRequestedIterator{contract: _Aqua.contract, event: "ChainlinkRequested", logs: logs, sub: sub}, nil
+}
+
+// WatchChainlinkRequested is a free log subscription operation binding the contract event 0xb5e6e01e79f91267dc17b4e6314d5d4d03593d2ceee0fbb452b750bd70ea5af9.
+//
+// Solidity: e ChainlinkRequested(id indexed bytes32)
+func (_Aqua *AquaFilterer) WatchChainlinkRequested(opts *bind.WatchOpts, sink chan<- *AquaChainlinkRequested, id [][32]byte) (event.Subscription, error) {
+
+	var idRule []interface{}
+	for _, idItem := range id {
+		idRule = append(idRule, idItem)
+	}
+
+	logs, sub, err := _Aqua.contract.WatchLogs(opts, "ChainlinkRequested", idRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(AquaChainlinkRequested)
+				if err := _Aqua.contract.UnpackLog(event, "ChainlinkRequested", log); err != nil {
 					return err
 				}
 				event.Raw = log

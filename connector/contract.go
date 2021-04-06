@@ -7,7 +7,7 @@ import (
 	"log"
 )
 
-const contractAddress = ""
+const contractAddress = "AQUAPROTOCOL_ADDRESS"
 
 func ContractFactory(client *ethclient.Client) *token.Aqua {
 	contractAddress := common.HexToAddress(contractAddress)

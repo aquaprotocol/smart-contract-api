@@ -12,12 +12,12 @@ import (
 
 func ProvideBalanceOfInfo(info AccountInfo) BalanceInfo {
 
-	client, err := ethclient.Dial("")
+	client, err := ethclient.Dial("INFURA_WSS_ADDRESS")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	tokenAddress := common.HexToAddress("")
+	tokenAddress := common.HexToAddress("TOKEN_ADDRESS")
 	instance, err := token.NewContract(tokenAddress, client)
 	if err != nil {
 		log.Fatal(err)

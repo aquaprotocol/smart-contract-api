@@ -19,15 +19,18 @@ func ProvideInvokeDeposition(invokeDeposition *InvokeDeposition) *res.InvokeResp
 	instance := con.ContractFactory(client)
 
 	amount := new(big.Int)
-	assetAddress := common.HexToAddress("")
+	assetAddress := common.HexToAddress("ASSET_ADDRESS")
 	amount.SetString(invokeDeposition.Amount, 10)
 
 	var tx *types.Transaction
 	var err error
 	if invokeDeposition.DepositionType == "C" {
 		fmt.Println("Deposit for crypto")
+		//currencyAddress := common.HexToAddress(invokeDeposition.EthAccount)
+
 		//n.SendNotification("Crypto deposition")
-tx, err = instance.Deposit(transactOpts, assetAddress, amount, common.HexToAddress(invokeDeposition.AccountNumberFrom))
+		//tx, err = instance.Deposit(transactOpts, assetAddress, currencyAddress, amount, common.HexToAddress(invokeDeposition.AccountNumberFrom))
+		tx, err = instance.Deposit(transactOpts, assetAddress, amount, common.HexToAddress(invokeDeposition.AccountNumberFrom))
 
 		if err != nil {
 			log.Fatal(err)
@@ -45,5 +48,4 @@ tx, err = instance.Deposit(transactOpts, assetAddress, amount, common.HexToAddre
 	fmt.Println(tx.Hash().Hex())
 
 	return &res.InvokeResponseInfo{Hash: tx.Hash().Hex()}
-
 }

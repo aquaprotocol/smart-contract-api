@@ -1,7 +1,7 @@
 package withdraw
 
 type InvokeWithdrawBody struct {
-	InvokeWithdraw InvokeWithdraw `json:"invokeDeposition"`
+	InvokeWithdraw InvokeWithdraw `json:"invokeWithdraw"`
 }
 type InvokeWithdraw struct {
 	DepositionType string `json:"depType"`
