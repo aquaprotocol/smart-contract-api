@@ -9,7 +9,7 @@ To run `go build`
 
 
 ### Base function:
-In the bottom is a short description of the smart-contract-api function is described.
+In the bottom is a short description of the smart-contract-api functions.
 #### GetBalanceOf
 The function for obtaining bank account balance.
 
