@@ -1,4 +1,7 @@
 # smart-contract-api
+
+Chainlink Virtual Hackathon Spring 2021
+
 The Connector between webpage and blockchain's world.
 Web service is writen in GO language. 
 If it is your first step with GO please read this documentation https://goethereumbook.org/en/
