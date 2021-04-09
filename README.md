@@ -3,7 +3,7 @@
 Chainlink Virtual Hackathon Spring 2021
 
 The Connector between webpage and blockchain's world.
-Web service is writen in GO language. 
+Web service is written in GO language. 
 If it is your first step with GO please read this documentation https://goethereumbook.org/en/
 
 
@@ -30,7 +30,7 @@ type BalanceInfo struct {
 ```
 
 #### InvokeDeposition
-The function for invoke fiat/crypto currency deposition.
+The function for invoking fiat/cryptocurrency deposition.
 
 Request:
 ```go
@@ -53,7 +53,7 @@ type InvokeResponseInfo struct {
 }
 ```
 #### InvokeWithdraw
-The function for invoke fiat/crypto currency withdraw.
+The function for invoking fiat/cryptocurrency withdraw.
 
 Request:
 ```go
@@ -93,7 +93,7 @@ type InvokeResponseInfo struct {
 ```
 
 #### GetArtWorldState
-The function for get Art world state.
+The function for getting Art's world state.
 
 Request:
 
@@ -129,7 +129,7 @@ type InvokeResponseInfo struct {
 ```
 
 #### GetInsuranceWorldState
-The function for get insurance world state.
+The function to get an insurance's world state.
 
 Request:
 
@@ -166,7 +166,7 @@ type InvokeResponseInfo struct {
 ```
 
 #### GetPaperWorldState
-The function for get insurance world state.
+The function for getting paper's world state.
 
 Request:
 
@@ -183,7 +183,7 @@ type InvestPaperResponse struct {
 }
 ```
 #### World state
-For performance aspect world state is recorded parallel in blockchain and datebase.
+For the performance aspect, the world state is recorded parallel in blockchain and database.
 
 ```sql
 
@@ -226,12 +226,3 @@ Function for change state in Art.
 #### [ProvideInsuranceWorldStateModification](https://github.com/aquaprotocol/smart-contract-api/blob/856a7c0811284e99ada2c39cdfe748aca505492b/server/invest/insurance/provide_insurance_worldstate.go#L9)
 
 #### [ProvidePaperWorldStateModification](https://github.com/aquaprotocol/smart-contract-api/blob/856a7c0811284e99ada2c39cdfe748aca505492b/server/invest/paper/provide_paper_worldstate.go#L9)
-
-
-
-
-
-
-
-
-
